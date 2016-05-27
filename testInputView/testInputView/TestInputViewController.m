@@ -71,7 +71,7 @@
 -(void)keyboardDidHide:(NSNotification *)notification{
     
     if (isEmotionShow||isKeyboard) {
-        [self.testTv becomeFirstResponder];
+        //[self.testTv becomeFirstResponder];
     }else{
         
     }
@@ -86,6 +86,7 @@
         isKeyboard = NO;
         self.testTv.inputView = faceBoard;
         [self.testTv resignFirstResponder];
+        [self.testTv becomeFirstResponder];
         
     }else{
         [button setImage:[UIImage imageNamed:@"board_emoji"] forState:UIControlStateNormal];
@@ -93,6 +94,7 @@
         isKeyboard = YES;
         self.testTv.inputView = nil;
         [self.testTv resignFirstResponder];
+        [self.testTv becomeFirstResponder];
         
     }
 }
